@@ -49,7 +49,7 @@
             font-size: clamp(16px, 2vw, 20px);
             color: #94a3b8;
             margin-bottom: 35px;
-            max-width: 700px;
+            max-width: 750px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -92,7 +92,7 @@
         .section-title {
             font-size: clamp(28px, 4vw, 40px);
             font-weight: 800;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-align: left;
             width: 100%;
         }
@@ -140,13 +140,14 @@
             color: #334155;
             margin-bottom: 12px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
         }
         .card li::before {
             content: "✓";
             color: #10b981;
             font-weight: bold;
+            margin-top: 2px;
         }
 
         /* CASE STUDY SPLIT */
@@ -172,11 +173,15 @@
             font-weight: 700;
             color: #0f172a;
             margin-bottom: 8px;
+            margin-top: 15px;
+        }
+        .case-box h4:first-child {
+            margin-top: 0;
         }
         .case-box p {
             font-size: 15px;
             color: #475569;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .metric-box {
             background: #0b1329;
@@ -187,7 +192,7 @@
             border: 1px solid rgba(255,255,255,0.1);
         }
         .metric-number {
-            font-size: clamp(48px, 6vw, 72px);
+            font-size: clamp(42px, 5vw, 64px);
             font-weight: 800;
             color: #38bdf8;
             line-height: 1;
@@ -218,8 +223,8 @@
     <section>
         <div class="hero">
             <span class="tag">Business Analyst Portfolio</span>
-            <h1>Bridging Business Goals & Technical Execution</h1>
-            <p>Process Optimization, System Implementation & NDA-Compliant Case Studies</p>
+            <h1>Rigorous Discovery & Precise Technical Translation</h1>
+            <p>From Gemba Walks and Process Elicitation to BPD, BRD, FRD, and SRS Implementation.</p>
             <div class="badges">
                 <div class="badge">👤 Virjiña Vynalene Villarta</div>
                 <div class="badge">📈 Business Analyst</div>
@@ -230,25 +235,25 @@
     <!-- CORE EXPERTISE -->
     <section class="light-section">
         <div class="container">
-            <h2 class="section-title">Core Expertise & Approach</h2>
+            <h2 class="section-title">Core Competencies & Domain Experience</h2>
             <div class="grid-3">
                 <div class="card">
-                    <div class="card-icon">💬</div>
-                    <h3>Requirements Elicitation</h3>
-                    <p>Translating complex stakeholder needs into clear Business Requirement Documents (BRDs).</p>
+                    <div class="card-icon">🎯</div>
+                    <h3>Rigorous Discovery</h3>
+                    <p>Executing rigid workshops, crafting strategic probing questions to extract unstated needs, and conducting Gemba walks/on-site observations.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">⚙️</div>
-                    <h3>Process Optimization</h3>
-                    <p>Eliminating bottlenecks via BPMN mapping and automated workflow tools.</p>
+                    <div class="card-icon">🔄</div>
+                    <h3>End-to-End Domains</h3>
+                    <p>Deep operational exposure across Order-to-Cash (O2C with focus on Leasing income), Procure-to-Pay (P2P), Record-to-Report (R2R), and Employee Fund Monitoring.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>NDA Compliant</h3>
-                    <p>Demonstrating capability safely through anonymized metrics and generalized frameworks.</p>
+                    <div class="card-icon">📋</div>
+                    <h3>Structured Lifecycle</h3>
+                    <p>Translating current-state gaps into future-state Business Process Diagrams (BPD), BRDs, FRDs, and technical SRS specifications.</p>
                 </div>
             </div>
-            <p class="footer-note">Focused on measurable efficiency gains and data-driven decision making.</p>
+            <p class="footer-note">Focused on bridging complex operational realities with scalable technical execution.</p>
         </div>
     </section>
 
@@ -256,20 +261,23 @@
     <section class="light-section">
         <div class="container">
             <span style="color: #0284c7; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px; text-align: left;">Case Study 01</span>
-            <h2 class="section-title" style="margin-bottom: 30px;">Automated Loan Data Migration & Optimization</h2>
+            <h2 class="section-title" style="margin-bottom: 30px;">O2C Leasing & Data Migration Process Optimization</h2>
             
             <div class="case-grid">
                 <div class="case-box">
                     <h4>The Challenge</h4>
-                    <p>A financial institution faced severe processing bottlenecks and reconciliation errors across 500+ legacy accounts due to manual data entry.</p>
+                    <p>A financial institution faced severe processing bottlenecks, documentation gaps, and reconciliation errors across legacy accounts due to manual entry.</p>
                     
+                    <h4>Elicitation & Approach</h4>
+                    <p>Facilitated rigorous stakeholder workshops and structured interviews using targeted probing questions to map the As-Is state and unearth hidden friction points.</p>
+
                     <h4>My Role & Actions</h4>
-                    <p style="margin-bottom: 0;">Facilitated stakeholder workshops to map current-state workflows, designed target data migration mapping, and coordinated User Acceptance Testing (UAT).</p>
+                    <p style="margin-bottom: 0;">Captured future-state improvements into clear Business Process Diagrams (BPD), wrote comprehensive BRDs/FRDs, and translated business rules into precise data mapping configurations.</p>
                 </div>
                 <div class="metric-box">
                     <div class="metric-number">35%</div>
-                    <div class="metric-label">Reduction in Manual Entry Time</div>
-                    <div class="metric-sub">Tools: Lark Base, Advanced Excel, BPMN</div>
+                    <div class="metric-label">Reduction in Manual Processing Time</div>
+                    <div class="metric-sub">Frameworks: BPD, BRD, FRD, UAT</div>
                 </div>
             </div>
             <p class="footer-note">*Note: Client identifiers and proprietary tables have been scrubbed to comply with NDA requirements.</p>
@@ -280,51 +288,63 @@
     <section class="light-section">
         <div class="container">
             <span style="color: #0284c7; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px; text-align: left;">Case Study 02</span>
-            <h2 class="section-title" style="margin-bottom: 30px;">Financial Reconciliation & Period-End Automation</h2>
+            <h2 class="section-title" style="margin-bottom: 30px;">Financial Reconciliation & System Requirements (SRS)</h2>
             
             <div class="case-grid">
                 <div class="case-box">
                     <h4>The Challenge</h4>
-                    <p>Prolonged closing cycles caused by manual cross-checking between legacy systems and modern ERP balance sheet entries.</p>
+                    <p>Prolonged period-end closing cycles and compliance tracking issues across R2R and employee fund monitoring workflows.</p>
                     
+                    <h4>Discovery & Observation</h4>
+                    <p>Conducted Gemba walks and cross-departmental interviews to observe actual workflow behaviors and isolate data discrepancies.</p>
+
                     <h4>My Role & Actions</h4>
-                    <p style="margin-bottom: 0;">Analyzed period bottlenecks, developed automated tracking logs, and configured custom saved searches/reports for real-time gap analysis.</p>
+                    <p style="margin-bottom: 0;">Translated functional requirements into detailed System Requirement Documents (SRS), enabling engineers and configurers to deploy automated tracking logs seamlessly.</p>
                 </div>
                 <div class="metric-box">
                     <div class="metric-number">50%</div>
                     <div class="metric-label">Faster Period-End Closing Cycle</div>
-                    <div class="metric-sub">Tools: NetSuite ERP, Google Apps Script</div>
+                    <div class="metric-sub">Deliverables: SRS, Functional Specs, Automation Logs</div>
                 </div>
             </div>
-            <p class="footer-note">*Metrics generalized to protect confidential company financial data.</p>
+            <p class="footer-note">*Metrics generalized to protect confidential financial operational data.</p>
         </div>
     </section>
 
     <!-- TOOLKIT -->
     <section class="light-section">
         <div class="container">
-            <h2 class="section-title">Toolkit & Deliverables</h2>
-            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+            <h2 class="section-title">BA Frameworks & Deliverables Matrix</h2>
+            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
                 <div class="card">
-                    <div class="card-icon">📄</div>
-                    <h3>BA Deliverables</h3>
+                    <div class="card-icon">🔍</div>
+                    <h3>Discovery & Elicitation</h3>
                     <ul>
-                        <li>Business Requirement Documents (BRDs)</li>
-                        <li>Process Flowcharts (BPMN)</li>
-                        <li>UAT Test Scenarios & Scripts</li>
+                        <li>Rigorous Workshops & Interviews</li>
+                        <li>Probing Question Frameworks</li>
+                        <li>Gemba Walks & On-site Observations</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <div class="card-icon">💻</div>
-                    <h3>Systems & Tools</h3>
+                    <div class="card-icon">📄</div>
+                    <h3>Analysis & Documentation</h3>
                     <ul>
-                        <li>NetSuite ERP & Lark Base</li>
-                        <li>Advanced Excel & Google Sheets</li>
-                        <li>Jira, Confluence, Visio</li>
+                        <li>Business Process Diagrams (BPD)</li>
+                        <li>Business Requirement Docs (BRD)</li>
+                        <li>Functional Requirement Docs (FRD)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Technical Translation</h3>
+                    <ul>
+                        <li>System Requirement Docs (SRS)</li>
+                        <li>UAT Test Scripts & Validation</li>
+                        <li>O2C, P2P, R2R Process Alignment</li>
                     </ul>
                 </div>
             </div>
-            <p class="footer-note">Ready to adapt methodologies to your team's stack (Agile / Waterfall).</p>
+            <p class="footer-note">Ready to drive clarity from initial stakeholder interview to final technical release.</p>
         </div>
     </section>
 
