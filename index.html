@@ -146,12 +146,12 @@
             width: 100%;
         }
 
-        /* ABOUT ME SECTION STYLING */
+        /* ABOUT ME SECTION STYLING (EQUAL HEIGHT BOXES) */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
+            grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: center;
+            align-items: stretch; /* Sinisigurong pareho ang haba/taas ng mga box */
             width: 100%;
             text-align: left;
         }
@@ -164,6 +164,9 @@
             border-radius: 16px;
             padding: 35px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
         .about-card h3 {
             font-size: 22px;
@@ -368,8 +371,9 @@
             <div class="about-grid">
                 <div class="about-card">
                     <h3>My Journey</h3>
-                    <p>Hello! I am <strong>Virjiña Vynalene Villarta</strong>. My corporate journey began as an ICT Assistant and PMO Associate before stepping up into my role as a Junior Business Analyst.</p>
-                    <p>For me, being a BA goes far beyond writing documentation; it is about acting as a crucial bridge between complex, tangled business operations and clean, scalable technical solutions that make everyday execution seamless.</p>
+                    <p>Hello! You can call me <strong>Vy</strong>. I graduated with a Bachelor of Science in Information Technology as a <strong>Magna Cum Laude</strong> (GPA 1.26) from <strong>Mary the Queen College of Quezon City</strong> in June 2024.</p>
+                    <p>My corporate journey officially kicked off in July 2024, starting as an ICT Assistant and PMO Associate before stepping up into my role as a Junior Business Analyst.</p>
+                    <p>Naturally curious, adventurous, and adaptable, I thrive on exploring new knowledge, mastering tools, and embracing exciting technical challenges. For me, being a BA is about acting as a crucial bridge between complex business operations and scalable technical solutions.</p>
                 </div>
                 <div class="about-card">
                     <h3>Beyond Documentation...</h3>
