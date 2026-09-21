@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; } /* Para sa smooth jumping kapag pinindot ang tabs */
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b1329;
@@ -14,13 +15,55 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
+
+        /* NAVIGATION BAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 19, 41, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 1000;
+        }
+        .nav-logo {
+            font-weight: 800;
+            font-size: 16px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+        @media(max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; /* Pwede i-expand o itago muna sa mobile kung maliit ang screen */ }
+        }
+
         section {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 60px 20px;
+            padding: 100px 20px 60px 20px; /* Dinagdagan sa taas para hindi matakpan ng fixed navbar */
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
         
@@ -225,8 +268,19 @@
 </head>
 <body>
 
+    <!-- TOP NAVIGATION BAR -->
+    <nav>
+        <a href="#hero" class="nav-logo">Vy Villarta</a>
+        <ul class="nav-links">
+            <li><a href="#expertise">Expertise</a></li>
+            <li><a href="#casestudy1">Case Studies</a></li>
+            <li><a href="#toolkit">Toolkit</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <!-- HERO SECTION -->
-    <section>
+    <section id="hero">
         <div class="hero">
             <span class="tag">Business Analyst Portfolio</span>
             <h1>Rigorous Discovery & Precise Technical Translation</h1>
@@ -239,7 +293,7 @@
     </section>
 
     <!-- CORE EXPERTISE -->
-    <section class="light-section">
+    <section id="expertise" class="light-section">
         <div class="container">
             <h2 class="section-title">Core Competencies & Domain Experience</h2>
             <div class="grid-3">
@@ -264,7 +318,7 @@
     </section>
 
     <!-- CASE STUDY 1 -->
-    <section class="light-section">
+    <section id="casestudy1" class="light-section">
         <div class="container">
             <span style="color: #0284c7; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px; text-align: left;">Case Study 01</span>
             <h2 class="section-title" style="margin-bottom: 30px;">O2C Leasing & Data Migration Process Optimization</h2>
@@ -355,7 +409,7 @@
     </section>
 
     <!-- SYSTEMS & TECHNICAL TOOLKIT -->
-    <section class="light-section">
+    <section id="toolkit" class="light-section">
         <div class="container">
             <h2 class="section-title">Systems & Technical Toolkit</h2>
             <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
@@ -392,7 +446,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section>
+    <section id="contact">
         <div class="hero">
             <h2 style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 15px; color: #ffffff; text-align: center;">Let's Optimize Together</h2>
             <p style="margin-bottom: 30px;">Open for Business Analyst opportunities and process automation discussions.</p>
