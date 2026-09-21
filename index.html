@@ -3,42 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Business Analyst Portfolio</title>
+    <title>Vy Villarta | Business Analyst Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; background: #f4f4f9; color: #333; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        h2 { color: #34495e; border-bottom: 2px solid #ecf0f1; padding-bottom: 5px; }
-        .project { margin-bottom: 20px; }
-        .skills { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; }
-        .skills li { background: #e0f7fa; color: #00796b; padding: 5px 10px; border-radius: 4px; font-size: 14px; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b1329;
+            color: #ffffff;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            max-width: 900px;
+        }
+        .tag {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+        h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .hero p {
+            font-size: clamp(16px, 2vw, 20px);
+            color: #94a3b8;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* LIGHT SECTIONS */
+        .light-section {
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .light-section .section-title {
+            color: #0f172a;
+        }
+        .light-section .footer-note {
+            color: #64748b;
+        }
+
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: left;
+            width: 100%;
+        }
+
+        /* CARDS GRID */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            width: 100%;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .card-icon {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #0284c7;
+        }
+        .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+        .card p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card li {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .card li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* CASE STUDY SPLIT */
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 30px;
+            width: 100%;
+            align-items: center;
+        }
+        @media(max-width: 900px) {
+            .case-grid { grid-template-columns: 1fr; }
+        }
+        .case-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 35px;
+            text-align: left;
+        }
+        .case-box h4 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+        .case-box p {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+        .metric-box {
+            background: #0b1329;
+            border-radius: 16px;
+            padding: 45px 30px;
+            text-align: center;
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .metric-number {
+            font-size: clamp(48px, 6vw, 72px);
+            font-weight: 800;
+            color: #38bdf8;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        .metric-label {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #f8fafc;
+        }
+        .metric-sub {
+            font-size: 13px;
+            color: #94a3b8;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 13px;
+            width: 100%;
+            text-align: left;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>[Pangalan Mo]</h1>
-        <p><strong>Junior Business Analyst</strong> | Process Optimization & System Implementation</p>
-        
-        <h2>About Me</h2>
-        <p>Result-driven Junior Business Analyst experienced in requirements gathering, process optimization, and system integration. Skilled in bridging the gap between technical teams and business stakeholders.</p>
-        
-        <h2>Featured Projects (NDA-Compliant)</h2>
-        <div class="project">
-            <h3>Project: Automated Data Migration & Process Optimization</h3>
-            <p><strong>Challenge:</strong> Addressed manual data entry bottlenecks and disjointed records across multiple legacy accounts.</p>
-            <p><strong>My Role:</strong> Facilitated stakeholder interviews, designed target-state data mapping, and conducted UAT.</p>
-            <p><strong>Result:</strong> Reduced manual entry time by 35% and accelerated system implementation.</p>
-        </div>
 
-        <h2>Skills & Tools</h2>
-        <ul class="skills">
-            <li>Requirements Gathering</li>
-            <li>Process Mapping (BPMN)</li>
-            <li>Gap Analysis</li>
-            <li>NetSuite / ERP</li>
-            <li>Lark Base</li>
-            <li>Advanced Excel</li>
-        </ul>
-    </div>
+    <!-- HERO SECTION -->
+    <section>
+        <div class="hero">
+            <span class="tag">Business Analyst Portfolio</span>
+            <h1>Bridging Business Goals & Technical Execution</h1>
+            <p>Process Optimization, System Implementation & NDA-Compliant Case Studies</p>
+            <div class="badges">
+                <div class="badge">👤 Vy Villarta</div>
+                <div class="badge">📈 Junior Business Analyst</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE EXPERTISE -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="section-title">Core Expertise & Approach</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">💬</div>
+                    <h3>Requirements Elicitation</h3>
+                    <p>Translating complex stakeholder needs into clear Business Requirement Documents (BRDs).</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Process Optimization</h3>
+                    <p>Eliminating bottlenecks via BPMN mapping and automated workflow tools.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>NDA Compliant</h3>
+                    <p>Demonstrating capability safely through anonymized metrics and generalized frameworks.</p>
+                </div>
+            </div>
+            <p class="footer-note">Focused on measurable efficiency gains and data-driven decision making.</p>
+        </div>
+    </section>
+
+    <!-- CASE STUDY 1 -->
+    <section class="light-section">
+        <div class="container">
+            <span style="color: #0284c7; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px; text-align: left;">Case Study 01</span>
+            <h2 class="section-title" style="margin-bottom: 30px;">Automated Loan Data Migration & Optimization</h2>
+            
+            <div class="case-grid">
+                <div class="case-box">
+                    <h4>The Challenge</h4>
+                    <p>A financial institution faced severe processing bottlenecks and reconciliation errors across 500+ legacy accounts due to manual data entry.</p>
+                    
+                    <h4>My Role & Actions</h4>
+                    <p style="margin-bottom: 0;">Facilitated stakeholder workshops to map current-state workflows, designed target data migration mapping, and coordinated User Acceptance Testing (UAT).</p>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-number">35%</div>
+                    <div class="metric-label">Reduction in Manual Entry Time</div>
+                    <div class="metric-sub">Tools: Lark Base, Advanced Excel, BPMN</div>
+                </div>
+            </div>
+            <p class="footer-note">*Note: Client identifiers and proprietary tables have been scrubbed to comply with NDA requirements.</p>
+        </div>
+    </section>
+
+    <!-- CASE STUDY 2 -->
+    <section class="light-section">
+        <div class="container">
+            <span style="color: #0284c7; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px; text-align: left;">Case Study 02</span>
+            <h2 class="section-title" style="margin-bottom: 30px;">Financial Reconciliation & Period-End Automation</h2>
+            
+            <div class="case-grid">
+                <div class="case-box">
+                    <h4>The Challenge</h4>
+                    <p>Prolonged closing cycles caused by manual cross-checking between legacy systems and modern ERP balance sheet entries.</p>
+                    
+                    <h4>My Role & Actions</h4>
+                    <p style="margin-bottom: 0;">Analyzed period bottlenecks, developed automated tracking logs, and configured custom saved searches/reports for real-time gap analysis.</p>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-number">50%</div>
+                    <div class="metric-label">Faster Period-End Closing Cycle</div>
+                    <div class="metric-sub">Tools: NetSuite ERP, Google Apps Script</div>
+                </div>
+            </div>
+            <p class="footer-note">*Metrics generalized to protect confidential company financial data.</p>
+        </div>
+    </section>
+
+    <!-- TOOLKIT -->
+    <section class="light-section">
+        <div class="container">
+            <h2 class="section-title">Toolkit & Deliverables</h2>
+            <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                <div class="card">
+                    <div class="card-icon">📄</div>
+                    <h3>BA Deliverables</h3>
+                    <ul>
+                        <li>Business Requirement Documents (BRDs)</li>
+                        <li>Process Flowcharts (BPMN)</li>
+                        <li>UAT Test Scenarios & Scripts</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Systems & Tools</h3>
+                    <ul>
+                        <li>NetSuite ERP & Lark Base</li>
+                        <li>Advanced Excel & Google Sheets</li>
+                        <li>Jira, Confluence, Visio</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-note">Ready to adapt methodologies to your team's stack (Agile / Waterfall).</p>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section>
+        <div class="hero">
+            <h2 style="font-size: clamp(32px, 4vw, 48px); font-weight: 800; margin-bottom: 15px; color: #ffffff; text-align: center;">Let's Optimize Together</h2>
+            <p style="margin-bottom: 30px;">Open for Junior Business Analyst opportunities and process automation discussions.</p>
+            <div class="badges">
+                <div class="badge">✉️ vy.villarta@example.com</div>
+                <div class="badge">💼 linkedin.com/in/vy-villarta</div>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>
