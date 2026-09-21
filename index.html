@@ -134,7 +134,7 @@
         }
 
         .container {
-            max-width: 1200px; /* Pinalaki nang kaunti para magkasya ang 4 columns */
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
         }
@@ -146,6 +146,38 @@
             width: 100%;
         }
 
+        /* ABOUT ME SECTION STYLING */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 40px;
+            align-items: center;
+            width: 100%;
+            text-align: left;
+        }
+        @media(max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+        .about-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+        .about-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+        .about-card p {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
         /* CARDS GRID */
         .grid-3 {
             display: grid;
@@ -154,7 +186,7 @@
             width: 100%;
         }
 
-        /* Ginawa nating 4 columns para sa Systems & Technical Toolkit */
+        /* 4 COLUMNS FOR TOOLKIT */
         #toolkit .grid-4 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -166,7 +198,7 @@
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 16px;
-            padding: 30px 20px; /* Binawasan nang kaunti ang padding para magkasya ang texts */
+            padding: 30px 20px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
             text-align: left;
             display: flex;
@@ -179,7 +211,7 @@
             color: #0284c7;
         }
         .card h3 {
-            font-size: 18px; /* Binawasan nang konti para balanced */
+            font-size: 18px;
             font-weight: 700;
             margin-bottom: 12px;
             color: #0f172a;
@@ -194,7 +226,7 @@
             padding: 0;
         }
         .card li {
-            font-size: 14px; /* Medyo pinaliit para swak sa 4-column layout */
+            font-size: 14px;
             color: #334155;
             margin-bottom: 10px;
             display: flex;
@@ -294,6 +326,7 @@
             line-height: 1.6;
         }
         .contact-badges {
+            dispatch: flex;
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -307,6 +340,7 @@
     <nav>
         <a href="#hero" class="nav-logo">V. Villarta</a>
         <ul class="nav-links">
+            <li><a href="#about">About Me</a></li>
             <li><a href="#expertise">Expertise</a></li>
             <li><a href="#casestudy1">Case Studies</a></li>
             <li><a href="#toolkit">Toolkit</a></li>
@@ -324,6 +358,30 @@
                 <div class="badge">👤 Virjiña Vynalene Villarta</div>
                 <div class="badge">📈 Business Analyst</div>
             </div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME SECTION -->
+    <section id="about" class="light-section">
+        <div class="container">
+            <h2 class="section-title">Sino Ako at Ano ang Kaya Ko Pang Gawin?</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Ang Kwento Ko</h3>
+                    <p>Hello! Ako si <strong>Virjiña Vynalene Villarta</strong>. Nagsimula ang aking journey sa corporate world bilang isang ICT Assistant at PMO Associate bago ako tuluyang na-promote bilang Junior Business Analyst.</p>
+                    <p>Para sa akin, ang pagiging isang BA ay hindi lamang tungkol sa paggawa ng dokumento; ito ay tungkol sa pagiging tulay sa pagitan ng nakakalito o magulong proseso ng negosyo at ng malinaw, solusyong teknikal na gagawing mas madali ang buhay ng lahat.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Higit pa sa Dokumentasyon...</h3>
+                    <p>Bukod sa pag-draft ng mga BPD, BRD, FRD, at SRS, handa rin akong sumabak at mag-ambag sa mas malalawak pang mga hamon:</p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px; font-size: 14px; color: #334155;">🚀 <strong>Process Automation:</strong> Kaya kong mag-optimize ng workflows gamit ang Lark Base, Google Apps Script, at advanced Excel structures.</li>
+                        <li style="margin-bottom: 10px; font-size: 14px; color: #334155;">💻 <strong>System Configuration:</strong> May malalim akong exposure sa NetSuite ERP customizations, saved searches, at data migrations.</li>
+                        <li style="margin-bottom: 10px; font-size: 14px; color: #334155;">🔍 <strong>Deep Analytical Audits:</strong> Sanay ako sa Gemba walks, gap analysis, at cross-departmental reconciliation para masigurong walang naiiwang datos.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-note">Patuloy akong nag-e-evolve at handang dalhin ang aking teknikal at analytical na kasanayan sa mga susunod pang hamon!</p>
         </div>
     </section>
 
@@ -447,7 +505,6 @@
     <section id="toolkit" class="light-section">
         <div class="container">
             <h2 class="section-title">Systems & Technical Toolkit</h2>
-            <!-- Gumamit na tayo ng .grid-4 class para pantay silang apat sa iisang row -->
             <div class="grid-4">
                 <div class="card">
                     <div class="card-icon">💻</div>
