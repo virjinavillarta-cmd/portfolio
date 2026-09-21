@@ -36,6 +36,7 @@
             font-size: 16px;
             color: #ffffff;
             text-decoration: none;
+            cursor: pointer;
         }
         .nav-links {
             display: flex;
@@ -48,8 +49,9 @@
             font-size: 14px;
             font-weight: 600;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
-        .nav-links a:hover {
+        .nav-links a:hover, .nav-links a.active {
             color: #38bdf8;
         }
         @media(max-width: 768px) {
@@ -57,14 +59,19 @@
             .nav-links { display: none; }
         }
 
+        /* SECTION TAB SWITCHING STYLES */
         section {
+            display: none; /* Naka-hide by default ang lahat */
             min-height: 100vh;
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 100px 20px 60px 20px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        section.active-section {
+            display: flex; /* Lilitaw lang kapag aktibo ang tab */
         }
         
         /* HERO SECTION */
@@ -401,19 +408,19 @@
 
     <!-- TOP NAVIGATION BAR -->
     <nav>
-        <a href="#hero" class="nav-logo">V. Villarta</a>
+        <a onclick="switchTab('hero')" class="nav-logo">V. Villarta</a>
         <ul class="nav-links">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#casestudy1">Case Studies</a></li>
-            <li><a href="#toolkit">Toolkit</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a onclick="switchTab('about')" data-target="about">About Me</a></li>
+            <li><a onclick="switchTab('experience')" data-target="experience">Experience</a></li>
+            <li><a onclick="switchTab('expertise')" data-target="expertise">Expertise</a></li>
+            <li><a onclick="switchTab('casestudy1')" data-target="casestudy1">Case Studies</a></li>
+            <li><a onclick="switchTab('toolkit')" data-target="toolkit">Toolkit</a></li>
+            <li><a onclick="switchTab('contact')" data-target="contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="hero">
+    <section id="hero" class="active-section">
         <div class="hero">
             <span class="tag">Business Analyst Portfolio</span>
             <h1>Rigorous Discovery & Precise Technical Translation</h1>
@@ -561,70 +568,6 @@
         </div>
     </section>
 
-    <!-- CASE STUDY 2 -->
-    <section class="light-section">
-        <div class="container">
-            <span style="color: #0284c7; font-weight: 700; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 10px; text-align: left;">Case Study 02</span>
-            <h2 class="section-title" style="margin-bottom: 30px;">Financial Reconciliation & System Requirements (SRS)</h2>
-            
-            <div class="case-grid">
-                <div class="case-box">
-                    <h4>The Challenge</h4>
-                    <p>Prolonged period-end closing cycles and compliance tracking issues across R2R and employee fund monitoring workflows.</p>
-                    
-                    <h4>Discovery & Observation</h4>
-                    <p>Conducted Gemba walks and cross-departmental interviews to observe actual workflow behaviors and isolate data discrepancies.</p>
-
-                    <h4>My Role & Actions</h4>
-                    <p style="margin-bottom: 0;">Translated functional requirements into detailed System Requirement Documents (SRS), enabling engineers and configurers to deploy automated tracking logs seamlessly.</p>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-number">50%</div>
-                    <div class="metric-label">Faster Period-End Closing Cycle</div>
-                    <div class="metric-sub">Deliverables: SRS, Functional Specs, Automation Logs</div>
-                </div>
-            </div>
-            <p class="footer-note">*Metrics generalized to protect confidential financial operational data.</p>
-        </div>
-    </section>
-
-    <!-- DELIVERABLES MATRIX -->
-    <section class="light-section">
-        <div class="container">
-            <h2 class="section-title">BA Frameworks & Deliverables Matrix</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon">🔍</div>
-                    <h3>Discovery & Elicitation</h3>
-                    <ul>
-                        <li>Rigorous Workshops & Interviews</li>
-                        <li>Probing Question Frameworks</li>
-                        <li>Gemba Walks & On-site Observations</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📄</div>
-                    <h3>Analysis & Documentation</h3>
-                    <ul>
-                        <li>Business Process Diagrams (BPD)</li>
-                        <li>Business Requirement Docs (BRD)</li>
-                        <li>Functional Requirement Docs (FRD)</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <div class="card-icon">⚙️</div>
-                    <h3>Technical Translation</h3>
-                    <ul>
-                        <li>System Requirement Docs (SRS)</li>
-                        <li>UAT Test Scripts & Validation</li>
-                        <li>O2C, P2P, R2R Process Alignment</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="footer-note">Ready to drive clarity from initial stakeholder interview to final technical release.</p>
-        </div>
-    </section>
-
     <!-- SYSTEMS & TECHNICAL TOOLKIT -->
     <section id="toolkit" class="light-section">
         <div class="container">
@@ -641,7 +584,7 @@
                 </div>
                 <div class="card">
                     <div class="card-icon">📊</div>
-                    ### Data & Analysis
+                    <h3>Data & Analysis</h3>
                     <ul>
                         <li>Advanced Excel & Google Sheets</li>
                         <li>Google Apps Script / Automation Logs</li>
@@ -672,6 +615,7 @@
             <p class="footer-note">Equipped with the right digital stack to execute smooth implementations and audits.</p>
         </div>
     </section>
+
     <!-- CONTACT SECTION -->
     <section id="contact">
         <div class="container">
@@ -687,5 +631,33 @@
         </div>
     </section>
 
+    <!-- JAVASCRIPT PARA SA TAB SWITCHING -->
+    <script>
+        function switchTab(targetId) {
+            // Itago ang lahat ng sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => {
+                sec.classList.remove('active-section');
+            });
+
+            // Ipakita lang ang piniling section
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active-section');
+            }
+
+            // I-update ang active state ng nav links
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('data-target') === targetId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // I-scroll pabalik sa taas ng pahina nang maayos
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
